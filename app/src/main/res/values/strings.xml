@@ -1,0 +1,9 @@
+<resources>
+  <string name="app_name">MoralesDelfinoMauro</string>
+  <string name="Usuario">Usuario</string>
+  <string name="Password">Contraseña</string>
+  <string name="Ingresar">Ingresar</string>
+  <string name="Registrado">Registrado</string>
+  <string name="respuesta">respuesta</string>
+
+</resources>

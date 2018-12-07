@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="app_name">MoralesDelfinoMauro</string>
+  <string name="Usuario">User</string>
+  <string name="Password">Password</string>
+  <string name="Ingresar">Login</string>
+  <string name="Registrado">Logged</string>
+  <string name="respuesta">Response</string>
+
+</resources>

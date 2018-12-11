@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity implements Button.OnClickLis
   EditText user;
   EditText pass;
   Button boton;
+  Intent intento;
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
@@ -65,12 +66,13 @@ public class MainActivity extends AppCompatActivity implements Button.OnClickLis
 
 
       Log.d("Hola","Hola");
-      w = new Worker(h,"http://192.168.2.211:3000/login/"+us+"/"+ps,true);
+      w = new Worker(h,"http://192.168.2.159:3000/login/"+us+"/"+ps,true);
       h1= new Thread(w);
       h1.start();
-     // Intent i = new Intent(this.Main2Activity.class);
-      //Intent intento = new Intent(this.);
-     // super.startActivity(intento);
+
+
+
+
 
 
 
@@ -82,6 +84,7 @@ public class MainActivity extends AppCompatActivity implements Button.OnClickLis
     Log.d("handle", "mensaje sagrado");
     JSONObject a = (JSONObject)msg.obj;
     String tipo= null;
+    Intent intento = new Intent(this,Main2Activity.class);
     try {
       tipo = a.getString("type");
     } catch (JSONException e) {
@@ -91,17 +94,21 @@ public class MainActivity extends AppCompatActivity implements Button.OnClickLis
     if (tipo.equals("User"))
     {
       Log.d("usuarrioo:" ,tipo);
-      // Intent i = new Intent(this.Main2Activity.class)
-     // i.putExtra("resp",tipo);
-     // super.startActivity(intento);
+
+      intento.putExtra("resp",tipo);
+      super.startActivity(intento);
     }
     else if(tipo.equals("Admin"))
     {
       Log.d("adddd:" , tipo);
+      intento.putExtra("resp",tipo);
+      super.startActivity(intento);
     }
     else if(tipo.equals("error"))
     {
       Log.d("erorr:" ,tipo);
+      intento.putExtra("resp",tipo);
+      super.startActivity(intento);
     }
     return false;
 
